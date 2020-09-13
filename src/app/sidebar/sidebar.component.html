@@ -1,0 +1,16 @@
+<div class="sidebar-container mt-4">
+  <div class="sidebar-logo mb-1 mt-5">
+    {{ currentUser.username }}'s Home
+  </div>
+  <ul class="sidebar-navigation">
+
+    <ul class="list-group">
+      <li *ngFor="let room of rooms" class="list-group-item list-group-item-action list-group-item-primary mb-1"
+        style="color: #FFFFFF; font-size: large; text-align: center; border-bottom: .01px solid #165e8e;">
+        <a href="">{{ room.roomName }}</a>
+      </li>
+    </ul>
+  </ul>
+</div>
+<div class="content-container">
+</div>
