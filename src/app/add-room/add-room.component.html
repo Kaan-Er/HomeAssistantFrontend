@@ -1,18 +1,25 @@
-<div class="mt-5">
-    <div class="section-content section-content-p30">
-        <div class="container-fluid">
-            <div class="form-header">
-                <form>
-                    <div class="form-group ">
-                        <input type="text" class="form-control col-xs-4 mt-3" id="inputSettings" #newroomname placeholder="Enter the room name...">
-                    </div>
-                  <!-- <button  onclick="location.href='http://localhost:4200/tools'" type="submit" (click)="addRoom(newroomname.value)" class="newbtn" >Add
+<div class="addroom mt-5">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="form-header">
+        <form>
+          <div class="form-group ">
+            <input type="text" class="form-control col-xs-4 mt-3" id="inputSettings" #newroomname
+              placeholder="Enter the room name...">
+          </div>
+          <!-- <button  onclick="location.href='http://localhost:4200/tools'" type="submit" (click)="addRoom(newroomname.value)" class="newbtn" >Add
                         Room</button>   -->
-                        <div class="container ml-5 mt-4">
-                            <a class="btn" onclick="location.href='http://localhost:4200/tools'" (click)="addRoom(newroomname.value)">Add Room</a>
-                          </div>
-                </form>
-            </div>
-        </div>
+          <div class="container ml-5 mt-4">
+            <a class="btn" onclick="location.href='http://localhost:4200/home'" (click)="addRoom(newroomname.value)">Add
+              Room</a>
+            <br>
+            <a class="btn" onclick="location.href='http://localhost:4200/home'"
+              style="right: 17px; margin: 30px 0;">Back
+              to
+              home!</a>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+</div>

@@ -1,7 +1,190 @@
-<!-- <div class="container" >
-   <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header> 
-  <img src="assets/images/home.jpg" alt="home" style="width: 100%; height: auto;"> 
+<div class="user" *ngIf="isLoggedIn">
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__menu"><i class="fas fa-user-circle fa-2x"></i>
+        <ul class="nav__menu-lists nav__menu--2-lists">
+          <li class="nav__menu-items">Settings</li>
+          <li class="nav__menu-items" (click)="logout()">Logout</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
- -->
+<div class="main-content">
+  <div class="sidebar">
+    <div class="numberlist">
+      <div class="button" (click)="addRoom()"><span>Add Room</span></div>
+      <ol class="list-group">
+        <li *ngFor="let room of rooms">
+          <a href="">{{ room.roomName }}</a>
+        </li>
+      </ol>
+    </div><!-- /.numberlist -->
+  </div>
+  <div class="routing">
+    <div class="tools">
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="tool">
+        <div class="image">
+          <img src="assets/images/tool.png" alt="">
+        </div>
+        <div class="name">
+          <h4>Lamba</h4>
+          <hr>
+        </div>
+        <div class="statu">
+          <h5>Statu : </h5>
+        </div>
+        <div class="controller">
+          <div class="multi-button">
+            <button>On</button>
+            <button>Off</button>
+            <button>Rename</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

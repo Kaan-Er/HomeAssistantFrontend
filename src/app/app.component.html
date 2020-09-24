@@ -1,90 +1,44 @@
-<div id="app">
- <!--  Navbar -->
-  <nav class="navbar navbar-expand fixed-top navbar-dark" style="background-color: #042A36;">
-    <a href="#" class="navbar-brand" style="font-weight: bold;">HomeAssistant</a>
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/home" class="nav-link" routerLink="home"></a>
-      </li>
-      <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-      </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
-      </li>
-      <a class="bt more-bt ml-5" *ngIf="isLoggedIn" routerLink="addroom">
-        <span class="fl"></span><span class="sfl"></span><span class="cross"></span><i></i>
-        <p>add room</p>
-      </a>
-
-    </ul>
-
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-      <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register" style="font-weight: bold; color: #FFFFFF;">Signup</a>
-      </li>
-      <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login" style="font-weight: bold; color: #FFFFFF;">Login</a>
-      </li>
-    </ul>
-
-
-
-    <div class="dropdown mr-3" *ngIf="isLoggedIn">
-      <button class="dropbtn">{{ username }}</button>
-      <div class="dropdown-content mr-5">
-        <a routerLink="profile">Settings</a>
-        <a href="#" (click)="logout()">Logout</a>
-      </div>
+<div class="container-fluid">
+  <div class="header">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="">
     </div>
+    <div class="log">
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item"><a href="/register" routerLink="register" class="nav-link">Signup</a>
+          <!-- /.nav-link -->
+        </li><!-- /.nav-item -->
+        <li class="nav-item"><a href="/login" routerLink="login" class="nav-link">Login</a></li><!-- /.nav-item -->
+      </ul><!-- /.navbar-nav -->
+    </div><!-- /.log -->
+  </div><!-- /.header -->
 
-  </nav>
+  <router-outlet></router-outlet>
 
-
-
-  <div class="container">
-    <div *ngIf="isLoggedIn">
-      <aside class="menu-sidebar d-none d-lg-block">
-        <div class="logo">
-          <a href="#">
-            <img src="" alt="HomeControl" class="img-responsive">
-          </a>
+  <div class="footer">
+    <div class="container">
+      <div class="row text-center text-xs-center text-sm-center text-md-center mt-3">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <ul class="list-unstyled quick-links">
+            <li><a href="#"><i class="fa fa-angle-double-right"></i> Copyright © Kaan Er</a></li>
+            <h6 style="color: #FFFFFF;">2020</h6>
+          </ul>
         </div>
-
-        <app-sidebar></app-sidebar>
-
-      </aside>
-
-    </div>
-
-    <router-outlet></router-outlet>
-
-  </div>
-
-</div>
-
-<!-- Footer -->
-<section id="footer">
-  <div class="container">
-    <div class="row text-center text-xs-center text-sm-center text-md-center">
-      <div class="col-xs-6 col-sm-6 col-md-6">
-        <ul class="list-unstyled quick-links">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i>Copyright © Kaan Er</a></li>
-          <h6 style="color: #FFFFFF;">2020</h6>
-        </ul>
+        <div class="col-xs-6 col-sm-6 col-md-6 mt-2">
+          <ul class="list-unstyled list-inline social text-center">
+            <li class="btn-square wobble-horizontal"><a href="https://twitter.com/kaaner_dev"><i
+                  class="fab fa-twitter fa-2x"></i></a></li>
+            <li class="btn-square wobble-horizontal"><a href="https://www.instagram.com/championes_/"><i
+                  class="fab fa-instagram fa-2x"></i></a></li>
+            <li class="btn-square wobble-horizontal"><a href="https://github.com/Kaan-Er"><i
+                  class="fab fa-github fa-2x"></i></a>
+            </li>
+            <li class="btn-square wobble-horizontal"><a href="https://www.linkedin.com/in/kaan--er/" target="_blank"><i
+                  class="fab fa-linkedin fa-2x"></i></a></li>
+          </ul>
+        </div>
+        <hr>
       </div>
-      <div class="col-xs-6 col-sm-6 col-md-6 mt-2 ">
-        <ul class="list-unstyled list-inline social text-center">
-
-          <li class="list-inline-item"><a href="https://twitter.com/kaaner_dev"><i class="fa fa-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="https://www.instagram.com/championes_/"><i
-                class="fa fa-instagram"></i></a></li>
-          <li class="list-inline-item"><a href="https://github.com/Kaan-Er"><i class="fa fa-github"></i></a></li>
-          <li class="list-inline-item"><a href="https://www.linkedin.com/in/kaan--er/" target="_blank"><i
-                class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-      <hr>
     </div>
-  </div>
-</section>
+  </div><!-- /.footer -->
+</div><!-- /.container-fluid -->

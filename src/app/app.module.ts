@@ -15,7 +15,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { SidebarComponent } from './sidebar/sidebar.component';
+
 import { AddRoomComponent } from './add-room/add-room.component';
 
 @NgModule({
@@ -28,16 +28,10 @@ import { AddRoomComponent } from './add-room/add-room.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    SidebarComponent,
-    AddRoomComponent
+    AddRoomComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [authInterceptorProviders],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
