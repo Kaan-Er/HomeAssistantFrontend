@@ -20,6 +20,12 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent, canActivate: [AuthGuard] },
   { path: 'addroom', component: AddRoomComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

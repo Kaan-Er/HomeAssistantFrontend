@@ -3,10 +3,17 @@
     <div class="container-fluid">
       <div class="form-header">
         <form>
-          <div class="form-group ">
+          <!-- <div class="form-group ">
             <input type="text" class="form-control col-xs-4 mt-3" id="inputSettings" #newroomname
               placeholder="Enter the room name...">
-          </div>
+          </div> -->
+
+          <label for="inp" class="inp">
+            <input type="text" id="inp" placeholder="&nbsp;" #newroomname>
+            <span class="label">Enter the room name</span>
+            <span class="focus-bg"></span>
+          </label>
+
           <!-- <button  onclick="location.href='http://localhost:4200/tools'" type="submit" (click)="addRoom(newroomname.value)" class="newbtn" >Add
                         Room</button>   -->
           <div class="container ml-5 mt-4">
