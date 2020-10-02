@@ -7,27 +7,37 @@ import { UserService } from '../_services/user.service';
 @Component({
   selector: 'app-add-room',
   templateUrl: './add-room.component.html',
-  styleUrls: ['./add-room.component.css']
+  styleUrls: ['./add-room.component.css'],
 })
 export class AddRoomComponent implements OnInit {
-
   content: string;
+  isLoggedIn = false;
 
-  constructor(private userService: UserService, private roomService: RoomService, private route: Router,private tokenStorageService: TokenStorageService) { }
+  constructor(
+    private userService: UserService,
+    private roomService: RoomService,
+    private route: Router,
+    private tokenStorageService: TokenStorageService
+  ) {}
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
     this.userService.getUserBoard().subscribe(
-      data => {
+      (data) => {
         this.content = data;
       },
-      err => {
+      (err) => {
         this.content = JSON.parse(err.error).message;
       }
     );
   }
 
-addRoom(value:any){
+  addRoom(value: any) {
     const user = this.tokenStorageService.getUser();
-    this.roomService.addRoom(value,user.id);
-}
+    this.roomService.addRoom(value, user.id);
+  }
+  logout(): void {
+    this.tokenStorageService.signOut();
+    window.location.reload();
+  }
 }

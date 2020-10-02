@@ -10,22 +10,10 @@ body {
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  /* box-sizing: border-box; */
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style-type: none;
-}
-
 .user {
   position: absolute;
-  right: 30px;
-  top: 5px;
+  right: 50px;
+  top: -30px;
   background-color: none;
 }
 
@@ -64,9 +52,7 @@ nav {
 .nav__menu:hover>.nav__menu-lists li {
   display: block;
   border-radius: 5px;
-  position: relative;
-  left: -30px;
-  text-align: center;
+
 }
 
 .nav__menu:hover>.nav__menu-lists li:first-child {

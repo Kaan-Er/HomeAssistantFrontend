@@ -15,176 +15,38 @@
     <div class="numberlist">
       <div class="button" (click)="addRoom()"><span>Add Room</span></div>
       <ol class="list-group">
-        <li *ngFor="let room of rooms">
-          <a href="">{{ room.roomName }}</a>
+        <li *ngFor="let room of rooms;">
+          <a type="button" (click)="getRoomTools(room.id)" [routerLink]="['/home', room.id]"
+            routerLinkActive="router-link-active">{{ room.roomName }}</a>
         </li>
       </ol>
     </div><!-- /.numberlist -->
   </div>
   <div class="routing">
-    <div class="tools">
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
+    <div class="button" (click)="addTool()"><span>Add Tool</span></div>
+    <ol class="tools">
+      <li *ngFor="let tool of tools" class="active">
+        <div class="tool">
+          <div class="image">
+            <img src="assets/images/tool.png" alt="">
+          </div>
+          <div class="name">
+            <h4>{{ tool.toolName }}</h4>
+            <hr>
+          </div>
+          <div class="statu">
+            <h5>Statu : {{ tool.statu }}</h5>
+          </div>
+          <div class="controller">
+            <div class="multi-button">
+              <button>On</button>
+              <button>Off</button>
+              <button>Rename</button>
+              <button (click)="deleteTool(tool.id)">Delete</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-      <div class="tool">
-        <div class="image">
-          <img src="assets/images/tool.png" alt="">
-        </div>
-        <div class="name">
-          <h4>Lamba</h4>
-          <hr>
-        </div>
-        <div class="statu">
-          <h5>Statu : </h5>
-        </div>
-        <div class="controller">
-          <div class="multi-button">
-            <button>On</button>
-            <button>Off</button>
-            <button>Rename</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
+      </li>
+    </ol>
   </div>
 </div>

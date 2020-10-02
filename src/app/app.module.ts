@@ -17,6 +17,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 import { AddRoomComponent } from './add-room/add-room.component';
+import { AddToolComponent } from './add-tool/add-tool.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AddRoomComponent } from './add-room/add-room.component';
     BoardModeratorComponent,
     BoardUserComponent,
     AddRoomComponent,
+    AddToolComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [authInterceptorProviders],

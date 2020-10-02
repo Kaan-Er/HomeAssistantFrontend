@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .user {
   position: absolute;
   right: 50px;
@@ -71,6 +76,10 @@
   width: 87vw;
   height: 100%;
   overflow-y: auto;
+}
+
+.routing ol {
+  list-style-type: none;
 }
 
 .tools {
@@ -260,6 +269,12 @@ ul {
 
 .nav__menu:hover>.nav__menu-lists li {
   display: block;
+  border-radius: 5px;
+
+}
+
+.nav__menu:hover>.nav__menu-lists li:first-child {
+  margin: -1px 0 1px 0;
 }
 
 .nav__menu:hover>.nav__menu--1-lists li:nth-child(1) {

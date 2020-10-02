@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
@@ -17,7 +17,12 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   username: string;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService,
+    private router: Router,
+    private r: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -30,16 +35,17 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     this.authService.login(this.form).subscribe(
-      data => {
+      (data) => {
         this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data); 
+        this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        /* this.reloadPage();   */ 
-        this.router.navigate(['/home']); 
+        this.router.navigate(['/home']);
+        /* this.reloadPage();   */
       },
-      err => {
+
+      (err) => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
@@ -50,7 +56,7 @@ export class LoginComponent implements OnInit {
     window.location.reload();
   }
 
-  gotoHome(){
-    this.router.navigate(['/home']);
-  }
+  // gotoHome() {
+  //   this.router.navigate(['/home']);
+  // }
 }

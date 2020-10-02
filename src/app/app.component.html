@@ -1,16 +1,29 @@
 <div class="container-fluid">
   <div class="header">
     <div class="logo">
-      <img src="assets/images/logo.png" alt="">
+      <!-- <img src="assets/images/logo.png" alt=""> -->
+      <i class="fa fa-laptop-house fa-3x" routerLink="#" routerLinkActive="active"></i>
     </div>
     <div class="log">
       <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-        <li class="nav-item"><a href="/register" routerLink="register" class="nav-link">Signup</a>
+        <li class="nav-item"><a routerLink="register" class="nav-link">Signup</a>
           <!-- /.nav-link -->
         </li><!-- /.nav-item -->
-        <li class="nav-item"><a href="/login" routerLink="login" class="nav-link">Login</a></li><!-- /.nav-item -->
+        <li class="nav-item"><a routerLink="login" class="nav-link">Login</a></li><!-- /.nav-item -->
       </ul><!-- /.navbar-nav -->
     </div><!-- /.log -->
+    <!-- <div class="user" *ngIf="isLoggedIn">
+      <div class="nav">
+        <ul class="nav__list">
+          <li class="nav__menu"><i class="fas fa-user-circle fa-2x"></i>
+            <ul class="nav__menu-lists nav__menu--2-lists">
+              <li class="nav__menu-items">Settings</li>
+              <li class="nav__menu-items" (click)="logout()">Logout</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div> -->
   </div><!-- /.header -->
 
   <router-outlet></router-outlet>

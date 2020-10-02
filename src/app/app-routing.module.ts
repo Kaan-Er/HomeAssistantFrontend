@@ -9,9 +9,10 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AddRoomComponent } from './add-room/add-room.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { AddToolComponent } from './add-tool/add-tool.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home/:roomId', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
@@ -19,10 +20,11 @@ const routes: Routes = [
   { path: 'mod', component: BoardModeratorComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: BoardAdminComponent, canActivate: [AuthGuard] },
   { path: 'addroom', component: AddRoomComponent, canActivate: [AuthGuard] },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'addtool', component: AddToolComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'home/1', pathMatch: 'full' },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'home/1',
     pathMatch: 'full',
     canActivate: [AuthGuard],
   },
